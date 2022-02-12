@@ -5,9 +5,10 @@ module.exports = {
       colors: {
         "primary-color": "#032071",
         "secondary-color": "#4F3893",
+        "secondary-text-color": "#D4CDCD",
       },
       fontFamily: {
-        "poppins": ["Poppins", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
       },
       height: {
         height10: "10vh",
@@ -28,6 +29,7 @@ module.exports = {
         "custom-breakpoint1": "1600px",
         "custom-breakpoint2": "1680px",
         "custom-breakpoint3": "1900px",
+        "designer-screen": "1728px",
       },
     },
   },

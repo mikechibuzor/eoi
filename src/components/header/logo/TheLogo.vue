@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper z-50">
     <router-link to="/">
       <svg
         class="h-10 w-10"

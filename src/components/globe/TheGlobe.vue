@@ -1,9 +1,9 @@
-<script setup >
-import { ref, onMounted } from 'vue';
-import createGlobe from 'cobe';
+<script setup>
+import { ref, onMounted } from "vue"
+import createGlobe from "cobe"
 
-const el = ref();
-const phi = ref(0);
+const el = ref()
+const phi = ref(0)
 
 onMounted(() => {
   const globe = createGlobe(el.value, {
@@ -27,11 +27,11 @@ onMounted(() => {
     onRender: (state) => {
       // Called on every animation frame.
       // `state` will be an empty object, return updated params.
-      state.phi = phi.value;
-      phi.value += 0.01;
+      state.phi = phi.value
+      phi.value += 0.01
     },
-  });
-});
+  })
+})
 </script>
 
 <template>
@@ -41,15 +41,6 @@ onMounted(() => {
 </template>
 
 <style>
-html,
-body {
-  margin: 0;
-  background: black;
-  color: white;
-  font-family: sans-serif;
-  text-align: center;
-}
-
 .app {
   display: grid;
   place-items: center;

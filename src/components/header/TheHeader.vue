@@ -1,7 +1,7 @@
 <template>
   <header
     :class="compFixedHeader"
-    class="wrapper transition-all ease-in-out duration-300 h-height10 flex items-center justify-between pl-0 pr-4 xl:pl-14 xl:pr-20 pt-2"
+    class="wrapper transition-all ease-in-out duration-300 h-height10 flex items-center justify-between pl-4 pr-4 xl:pl-14 xl:pr-20 pt-2"
   >
     <the-logo></the-logo>
     <nav-bar></nav-bar>
@@ -57,12 +57,8 @@ header.fixed {
   width: 100%;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
   animation: fixHeader 0.3s ease;
-  background: #fff;
+  background: #032071;
   transition: transform;
-}
-html.dark header.fixed {
-  background-color: rgba(31, 41, 55, var(--tw-bg-opacity));
-  /* background-color: rgba(17, 4, 39, var(--tw-bg-opacity)); */
 }
 
 @keyframes fixHeader {

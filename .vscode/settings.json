@@ -3,5 +3,6 @@
     "source.fixAll.eslint": true
   },
   "prettier.semi": false,
-  "javascript.format.insertSpaceBeforeFunctionParenthesis": true
+  "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
+  "editor.formatOnSave": true
 }

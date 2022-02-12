@@ -22,7 +22,9 @@
         <li class="font-medium text-white">
           <router-link to="/contact">Contact</router-link>
         </li>
-        <li class="font-medium text-white">
+        <li
+          class="font-medium text-white border border-white px-8 hover:bg-white hover:text-black cursor-pointer py-2"
+        >
           <router-link to="/join">Join</router-link>
         </li>
       </ul>
@@ -82,7 +84,7 @@ a::before {
   left: 30%;
   right: 30%;
   border-radius: 50%;
-  bottom: -0.2rem;
+  bottom: -0.3rem;
   background: #4f3893;
   transition: all 0.3s ease-in-out;
 }
@@ -92,17 +94,17 @@ a:hover::before {
   width: 100%;
 }
 nav a:hover {
-  color: black;
+  color: #4f3893;
 }
 nav a.router-link-active::before {
   width: 10%;
   left: 40%;
   right: 40%;
-  background: #4f3893;
+  background: #000;
 }
 
 nav a.router-link-active {
-  color: #000;
+  color: white;
   font-weight: bold;
 }
 
@@ -151,7 +153,7 @@ nav a::before {
     transform: translateY(0%) translateX(0%);
 
     border-radius: 5% 50% 50% 50%;
-    box-shadow: 1px 1px 1px #191970;
+    box-shadow: 1px 1px 1px #4f3893;
     opacity: 1;
   }
 }
@@ -162,7 +164,7 @@ nav a::before {
   }
   to {
     transform: translateY(-100%) translateX(-100%);
-    box-shadow: 1px 1px 1px #191970;
+    box-shadow: 1px 1px 1px #4f3893;
     opacity: 0;
   }
 }

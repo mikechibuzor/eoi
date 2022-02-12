@@ -2,7 +2,7 @@
   <the-header></the-header>
   <router-view v-slot="slotProps">
     <transition name="route" mode="in-out">
-      <component class="min-h-screen" :is="slotProps.Component"></component>
+      <component class="md:px-8 xl:px-16" :is="slotProps.Component"></component>
     </transition>
   </router-view>
 </template>

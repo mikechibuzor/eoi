@@ -32,23 +32,19 @@ const toggleNav = () => {
 .burger {
   width: 75%;
   height: 0.2rem;
-  background-color: black;
+  background-color: white;
   border-radius: 5px;
   transition: all 0.2s ease-in;
   box-shadow: 0 2px 5px rgba(225, 101, 47, 0.2);
 }
-html.dark .burger,
-html.dark .burger::before,
-html.dark .burger::after {
-  background: white;
-}
+
 .burger::before,
 .burger::after {
   content: "";
   position: absolute;
   width: 75%;
   height: 0.2rem;
-  background-color: #000;
+  background-color: white;
   border-radius: 0.4rem;
   box-shadow: 0 2px 5px rgba(225, 101, 47, 0.2);
   transition: all 0.2s ease-in;
