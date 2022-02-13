@@ -4,7 +4,7 @@
       class="text mt-20 px-4 lg:px-20 flex flex-col items-center justify-center"
     >
       <h4 class="font-medium text-xl mb-3">Hello dear,</h4>
-      <p class="text-center text-lg leading-loose">
+      <p class="text-center text-sm lg:text-lg leading-loose">
         Hello dear, Nice to meet you. If you made it up to this point, it shows
         you have an interest in founding your tech roots. Congratulations, you
         are in the right place. Welcome to Segsalerty Resources. Over the years,
@@ -12,7 +12,7 @@
         proper guidance and mentorship.
       </p>
       <h4 class="font-medium text-xl mb-3 mt-14">Our Mission is to:</h4>
-      <p class="text-center text-lg leading-loose">
+      <p class="text-center text-sm lg:text-lg leading-loose">
         Identify, mentor, and upskill obscure talents while aligning them with
         their skill sets and goals. To deploy and situate engineers in a
         recognized spot in the tech global ecosystem To streamline and hasten
