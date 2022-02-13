@@ -2,7 +2,7 @@
   <div class="house w-full">
     <div
       @click="toggleNav"
-      class="pl-4 toggleMenu xl:hidden w-full xl:mt-6 flex justify-end items-center"
+      class="pl-4 toggleMenu lg:hidden w-full xl:mt-6 flex justify-end items-center"
     >
       <div class="menu-icon">
         <hamburger-button></hamburger-button>
@@ -11,7 +11,7 @@
     <nav ref="nav" class="w-full xl:block">
       <!-- for desktop -->
       <ul
-        class="hidden w-full xl:bg-transparent static xl:flex xl:items-center xl:justify-between flex-col xl:flex-row xl:w-full justify-start"
+        class="hidden w-full lg:bg-transparent static lg:flex lg:items-center lg:justify-between flex-col lg:flex-row lg:w-full justify-start"
       >
         <li class="font-medium text-white">
           <router-link to="/home">Home</router-link>
@@ -32,7 +32,7 @@
       <transition name="nav-list">
         <ul
           ref="ul"
-          class="absolute resp out xl:hidden resp left-0 shadow xl:shadow-none rounded xl:bg-transparent xl:static flex flex-col xl:flex-row xl:w-full justify-start"
+          class="absolute resp out lg:hidden resp left-0 shadow xl:shadow-none rounded xl:bg-transparent xl:static flex flex-col xl:flex-row xl:w-full justify-start"
         >
           <li class="mb-4 text-white">
             <router-link to="/home">Home</router-link>

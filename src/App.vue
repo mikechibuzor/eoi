@@ -2,13 +2,19 @@
   <the-header></the-header>
   <router-view v-slot="slotProps">
     <transition name="route" mode="in-out">
-      <component class="md:px-8 xl:px-16" :is="slotProps.Component"></component>
+      <component
+        class="md:px-8 xl:px-16 min-h-screen"
+        :is="slotProps.Component"
+      ></component>
     </transition>
   </router-view>
+  <!-- footer -->
+  <the-footer></the-footer>
 </template>
 
 <script setup>
 import TheHeader from "./components/header/TheHeader.vue"
+import TheFooter from "./components/footer/TheFooter.vue"
 </script>
 
 <style>

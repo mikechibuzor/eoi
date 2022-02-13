@@ -6,7 +6,7 @@
       <the-globe-image></the-globe-image>
     </div>
     <!-- second viewport join the biggest... -->
-    <div class="second-viewport px-4 lg:px-0">
+    <div class="second-viewport md:mt-72 lg:mt-0 px-4 lg:px-0">
       <div class="text flex w-full flex-col items-center justify-center mt-4">
         <h4
           class="text-sm md:text-xl lg:text-2xl font-medium custom-breakpoint:text-3xl text-white flex-col"
@@ -368,14 +368,44 @@
         >
           Are you ready?
         </h2>
-        <p class="text-secondary-text-color text-sm xl:text-xl mt-2">
-          Building & shaping milions of talents, Connecting Join the community
+        <p
+          class="text-secondary-text-color text-center text-sm xl:text-xl mt-2"
+        >
+          Building & shaping milions of talents,<br class="hidden lg:block" />
+          Connecting Join the community
         </p>
         <button
           class="border border-white text-secondary-text-color py-2.5 px-8 mt-10 font-bold lg:px-16"
+          @click="$router.push('/join')"
         >
           Join
         </button>
+      </div>
+      <div
+        class="boomerang flex flex-col md:flex-row gap-y-5 items-center justify-between py-5 between lg:w-3/4 mx-auto mt-10 mb-10"
+      >
+        <div
+          v-for="x in 3"
+          :key="x"
+          class="one flex flex-wrap flex-col md:flex-row items-center gap-4 justify-center"
+        >
+          <div class="icon">
+            <svg
+              class="h-10 w-10"
+              viewBox="0 0 72 72"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M31.7432 30.9367C45.3702 22.3758 63.7556 28.7165 56.0677 43.6981C48.3797 58.6707 -21.9128 30.9189 6.89486 44.7105C35.7025 58.502 46.8084 86.5913 58.5978 60.0384C70.3872 33.4854 84.5913 -23.9719 44.6423 10.9466C4.69323 45.865 14.7338 41.6111 31.7432 30.9367Z"
+                fill="#999999"
+              />
+            </svg>
+          </div>
+          <p class="text-secondary-text-color text-2xl font-medium">
+            Boomerang
+          </p>
+        </div>
       </div>
     </div>
   </div>
