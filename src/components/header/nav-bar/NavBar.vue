@@ -23,9 +23,9 @@
           <router-link to="/contact">Contact</router-link>
         </li>
         <li
-          class="font-medium text-white border border-white px-8 hover:bg-white hover:text-black cursor-pointer py-2"
+          
         >
-          <router-link to="/join">Join</router-link>
+          <router-link class="font-medium text-white border border-white px-8 hover:bg-white hover:text-black cursor-pointer py-2" to="/join">Join</router-link>
         </li>
       </ul>
       <!-- for mobile -->

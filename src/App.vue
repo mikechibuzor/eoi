@@ -2,10 +2,12 @@
   <the-header></the-header>
   <router-view v-slot="slotProps">
     <transition name="route" mode="in-out">
+      <keep-alive>
       <component
         class="md:px-8 xl:px-16 min-h-screen"
         :is="slotProps.Component"
       ></component>
+      </keep-alive>
     </transition>
   </router-view>
   <!-- footer -->
