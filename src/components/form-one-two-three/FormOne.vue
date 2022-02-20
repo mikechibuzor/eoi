@@ -33,25 +33,64 @@
     </div>
     <main class="lg:w-4/6 xl:w-3/6 mx-auto mb-20">
       <div class="form-element mb-14 px-8">
-        <label for="email"
+        <label for="email" class="font-bold"
           >Email<span class="text-red-700 text-2xl font-bold">*</span></label
         >
         <input
           type="email"
-          class="w-full py-3 border-b outline-none border-black placeholder:text-gray-300"
+          class="w-full py-3 border-b outline-none border-black placeholder:text-gray-300 placeholder:text-sm"
           placeholder="Enter Email"
         />
       </div>
       <div class="form-element px-8 mb-14">
-        <label for="email"
+        <label for="email" class="font-bold"
           >Full Name<span class="text-red-700 text-2xl font-bold"
             >*</span
           ></label
         >
         <input
           type="text"
-          class="w-full py-3 border-b outline-none border-black placeholder:text-gray-300"
+          class="w-full py-3 border-b outline-none border-black placeholder:text-gray-300 placeholder:text-sm"
           placeholder="Full Name"
+        />
+      </div>
+      <div class="form-element px-8 mb-14">
+        <label for="email" class="font-bold"
+          >Gender<span class="text-red-700 text-2xl font-bold">*</span></label
+        >
+        <div class="input-group mt-6">
+          <div class="input-inner flex items-center gap-2">
+            <input
+              type="radio"
+              id="male"
+              name="gender"
+              value="male"
+              class="py-3 border-b outline-none border-black placeholder:text-gray-300 placeholder:text-sm"
+              placeholder="Full Name"
+            />
+            <label for="male" class="cursor-pointer text-sm">Male</label>
+          </div>
+          <div class="input-inner mt-4 flex items-center gap-2">
+            <input
+              type="radio"
+              id="female"
+              name="gender"
+              value="female"
+              class="py-3 border-b outline-none border-black placeholder:text-gray-300 placeholder:text-sm"
+              placeholder="Full Name"
+            />
+            <label for="female" class="cursor-pointer text-sm">Female</label>
+          </div>
+        </div>
+      </div>
+      <div class="form-element flex items-center gap-3 px-8 mb-4">
+        <label for="email" class="font-bold">Specify</label>
+        <input
+          type="text"
+          name="specify"
+          id="specify"
+          class="border-b w-full outline-none border-black placeholder:text-gray-300 placeholder:text-sm"
+          placeholder=""
         />
       </div>
     </main>
