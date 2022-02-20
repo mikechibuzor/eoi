@@ -3,10 +3,10 @@
   <router-view v-slot="slotProps">
     <transition name="route" mode="in-out">
       <keep-alive>
-      <component
-        class="md:px-8 xl:px-16 min-h-screen"
-        :is="slotProps.Component"
-      ></component>
+        <component
+          class="md:px-8 xl:px-16 min-h-screen"
+          :is="slotProps.Component"
+        ></component>
       </keep-alive>
     </transition>
   </router-view>
@@ -41,5 +41,18 @@ import TheFooter from "./components/footer/TheFooter.vue"
 .route-leave-from {
   opacity: 1;
   /* transform: translateY(0); */
+}
+
+/* hide number input arrows */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
 }
 </style>

@@ -81,7 +81,7 @@
       </div>
       <!-- interested technical skill -->
       <div class="form-element px-8 mb-14">
-        <label for="email" class="font-bold"
+        <label class="font-bold"
           >What technical skill are you most interested in?<span
             class="text-red-700 text-2xl font-bold"
             >*</span
@@ -201,12 +201,58 @@
           </div>
         </div>
       </div>
+      <!-- basic knowledge -->
+      <div class="form-element px-8 mb-14">
+        <label class="font-bold"
+          >Do you have a basic knowledge of the selected skill?<span
+            class="text-red-700 text-2xl font-bold"
+            >*</span
+          ></label
+        >
+        <div class="input-group mt-6">
+          <!-- inner input basic knowledge -->
+          <div class="input-inner mb-4 flex items-center gap-2">
+            <input
+              type="radio"
+              id="yes"
+              name="technical_skill"
+              value="yes"
+              class="py-3 border-b outline-none border-black placeholder:text-gray-300 placeholder:text-sm"
+            />
+            <label for="yes" class="cursor-pointer text-sm">Yes</label>
+          </div>
+          <div class="input-inner mb-4 flex items-center gap-2">
+            <input
+              type="radio"
+              id="no"
+              name="technical_skill"
+              value="no"
+              class="py-3 border-b outline-none border-black placeholder:text-gray-300 placeholder:text-sm"
+            />
+            <label for="no" class="cursor-pointer text-sm">No</label>
+          </div>
+          <div class="input-inner mb-4 flex items-center gap-2">
+            <input
+              type="radio"
+              id="still_learning"
+              name="technical_skill"
+              value="still_learning"
+              class="py-3 border-b outline-none border-black placeholder:text-gray-300 placeholder:text-sm"
+            />
+            <label for="still_learning" class="cursor-pointer text-sm"
+              >Still Learning</label
+            >
+          </div>
+        </div>
+      </div>
     </main>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  data: () => ({}),
+}
 </script>
 
 <style></style>

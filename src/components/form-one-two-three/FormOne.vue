@@ -38,6 +38,7 @@
         >
         <input
           type="email"
+          v-model="email"
           class="w-full py-3 border-b outline-none border-black placeholder:text-gray-300 placeholder:text-sm"
           placeholder="Enter Email"
         />
@@ -50,11 +51,12 @@
         >
         <input
           type="text"
+          v-model="full_name"
           class="w-full py-3 border-b outline-none border-black placeholder:text-gray-300 placeholder:text-sm"
           placeholder="Full Name"
         />
       </div>
-      <div class="form-element px-8 mb-14">
+      <div class="form-element px-8 mb-2">
         <label for="email" class="font-bold"
           >Gender<span class="text-red-700 text-2xl font-bold">*</span></label
         >
@@ -63,6 +65,7 @@
             <input
               type="radio"
               id="male"
+              v-model="gender"
               name="gender"
               value="male"
               class="py-3 border-b outline-none border-black placeholder:text-gray-300 placeholder:text-sm"
@@ -74,6 +77,7 @@
             <input
               type="radio"
               id="female"
+              v-model="gender"
               name="gender"
               value="female"
               class="py-3 border-b outline-none border-black placeholder:text-gray-300 placeholder:text-sm"
@@ -83,20 +87,41 @@
           </div>
         </div>
       </div>
-      <div class="form-element flex items-center gap-3 px-8 mb-4">
-        <label for="email" class="font-bold">Specify</label>
+      <div class="form-element flex items-center gap-3 px-8 mb-14">
+        <label for="email">Specify</label>
         <input
           type="text"
           name="specify"
+          v-model="gender"
           id="specify"
           class="border-b w-full outline-none border-black placeholder:text-gray-300 placeholder:text-sm"
           placeholder=""
+        />
+      </div>
+      <div class="form-element mb-6 px-8">
+        <label for="email" class="font-bold"
+          >Phone Number<span class="text-red-700 text-2xl font-bold"
+            >*</span
+          ></label
+        >
+        <input
+          type="number"
+          v-model="phone_number"
+          class="w-full py-3 border-b outline-none border-black placeholder:text-gray-300 placeholder:text-sm"
+          placeholder="08094939264"
         />
       </div>
     </main>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+// import { ref } from "vue"
+
+// // reactive variables
+// const email = ref("")
+// const gender = ref("")
+// const full_name = ref("")
+</script>
 
 <style></style>
