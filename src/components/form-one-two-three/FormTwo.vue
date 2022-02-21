@@ -269,6 +269,10 @@
 
 <script setup>
 import { computed } from "vue"
+import { useStore } from 'vuex'
+
+// access store
+const store = useStore()
 
 const state = computed({
   get: () => store.getters.getState,

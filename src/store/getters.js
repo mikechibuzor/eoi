@@ -13,4 +13,10 @@ export const getters = {
   getGithubUrl: (state) => state.githubUrl,
   getWhyJoinNetwork: (state) => state.whyJoinNetwork,
   getUnderstandNotPaidJob: (state) => state.understandNotPaidJob,
+  validateFormOne: (state) => {
+    return state.email && state.fullname && state.gender && state.phoneNumber
+  },
+  //   validateFormTwo: (state) =>{
+
+  //   }
 }

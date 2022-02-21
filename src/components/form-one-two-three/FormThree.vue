@@ -9,6 +9,7 @@
         >
         <input
           type="text"
+          v-model="fieldChallenge"
           class="w-full py-3 border-b outline-none border-black placeholder:text-gray-300 placeholder:text-sm"
           placeholder="Your Answer"
         />
@@ -24,6 +25,7 @@
         >
         <input
           type="text"
+          v-model="projectDetails"
           class="w-full py-3 border-b outline-none border-black placeholder:text-gray-300 placeholder:text-sm"
           placeholder="Your Answer"
         />
@@ -38,6 +40,7 @@
         >
         <input
           type="text"
+          v-model="techJourney"
           class="w-full py-3 border-b outline-none border-black placeholder:text-gray-300 placeholder:text-sm"
           placeholder="Your Answer"
         />
@@ -52,6 +55,7 @@
         >
         <input
           type="text"
+          v-model="githubLink"
           class="w-full py-3 border-b outline-none border-black placeholder:text-gray-300 placeholder:text-sm"
           placeholder="Your Answer"
         />
@@ -66,6 +70,7 @@
         >
         <input
           type="text"
+          v-model="joinReason"
           class="w-full py-3 border-b outline-none border-black placeholder:text-gray-300 placeholder:text-sm"
           placeholder="Your Answer"
         />
@@ -85,6 +90,7 @@
             <input
               type="radio"
               id="yes"
+              v-model="notPaidJob"
               name="technical_skill"
               value="yes"
               class="py-3 border-b outline-none border-black placeholder:text-gray-300 placeholder:text-sm"
@@ -109,8 +115,36 @@
   </div>
 </template>
 
-<script>
-export default {}
+<script setup>
+import { computed } from "vue"
+import { useStore } from "vuex"
+// access store
+const store = useStore()
+
+const fieldChallenge = computed({
+  get: () => store.getters.getMostChallengingInField,
+  set: (val) => store.commit("setMostChallengingInField", val),
+})
+const projectDetails = computed({
+  get: () => store.getters.getDetailsOnImpressedProject,
+  set: (val) => store.commit("setDetailsOnImpressedProject", val),
+})
+const techJourney = computed({
+  get: () => store.getters.getTechJourney,
+  set: (val) => store.commit("setTechJourney", val),
+})
+const githubLink = computed({
+  get: () => store.getters.getGithubUrl,
+  set: (val) => store.commit("setGithubUrl", val),
+})
+const joinReason = computed({
+  get: () => store.getters.WhyJoinNetwork,
+  set: (val) => store.commit("setWhyJoinNetwork", val),
+})
+const notPaidJob = computed({
+  get: () => store.getters.getUnderstandNotPaidJob,
+  set: (val) => store.commit("setUnderstandNotPaidJob", val),
+})
 </script>
 
 <style></style>
