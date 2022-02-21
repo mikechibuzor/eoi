@@ -9,6 +9,7 @@
         >
         <input
           type="text"
+          v-model="state"
           class="w-full py-3 border-b outline-none border-black placeholder:text-gray-300 placeholder:text-sm"
           placeholder="e.g Lagos"
         />
@@ -26,6 +27,7 @@
             <input
               type="radio"
               id="ssce"
+              v-model="educationLevel"
               name="education_level"
               value="ssce"
               class="py-3 border-b outline-none border-black placeholder:text-gray-300 placeholder:text-sm"
@@ -37,6 +39,7 @@
             <input
               type="radio"
               id="ond"
+              v-model="educationLevel"
               name="education_level"
               value="ond"
               class="py-3 border-b outline-none border-black placeholder:text-gray-300 placeholder:text-sm"
@@ -47,6 +50,7 @@
             <input
               type="radio"
               id="hnd"
+              v-model="educationLevel"
               name="education_level"
               value="hnd"
               class="py-3 border-b outline-none border-black placeholder:text-gray-300 placeholder:text-sm"
@@ -57,6 +61,7 @@
             <input
               type="radio"
               id="undergraduate"
+              v-model="educationLevel"
               name="education_level"
               value="undergraduate"
               class="py-3 border-b outline-none border-black placeholder:text-gray-300 placeholder:text-sm"
@@ -69,6 +74,7 @@
             <input
               type="radio"
               id="bsc"
+              v-model="educationLevel"
               name="education_level"
               value="bsc"
               class="py-3 border-b outline-none border-black placeholder:text-gray-300 placeholder:text-sm"
@@ -93,6 +99,7 @@
             <input
               type="radio"
               id="ui/ux"
+              v-model="technicalSkill"
               name="technical_skill"
               value="ui/ux"
               class="py-3 border-b outline-none border-black placeholder:text-gray-300 placeholder:text-sm"
@@ -106,6 +113,7 @@
             <input
               type="radio"
               id="frontend"
+              v-model="technicalSkill"
               name="technical_skill"
               value="frontend"
               class="py-3 border-b outline-none border-black placeholder:text-gray-300 placeholder:text-sm"
@@ -119,6 +127,7 @@
             <input
               type="radio"
               id="backend"
+              v-model="technicalSkill"
               name="technical_skill"
               value="backend"
               class="py-3 border-b outline-none border-black placeholder:text-gray-300 placeholder:text-sm"
@@ -132,6 +141,7 @@
             <input
               type="radio"
               id="qa"
+              v-model="technicalSkill"
               name="technical_skill"
               value="qa"
               class="py-3 border-b outline-none border-black placeholder:text-gray-300 placeholder:text-sm"
@@ -143,6 +153,7 @@
             <input
               type="radio"
               id="data_science"
+              v-model="technicalSkill"
               name="technical_skill"
               value="data_science"
               class="py-3 border-b outline-none border-black placeholder:text-gray-300 placeholder:text-sm"
@@ -156,6 +167,7 @@
             <input
               type="radio"
               id="dev_ops"
+              v-model="technicalSkill"
               name="technical_skill"
               value="dev_ops"
               class="py-3 border-b outline-none border-black placeholder:text-gray-300 placeholder:text-sm"
@@ -168,6 +180,7 @@
               type="radio"
               id="mobile_dev"
               name="technical_skill"
+              v-model="technicalSkill"
               value="mobile_dev"
               class="py-3 border-b outline-none border-black placeholder:text-gray-300 placeholder:text-sm"
             />
@@ -180,6 +193,7 @@
             <input
               type="radio"
               id="scrum_master"
+              v-model="technicalSkill"
               name="technical_skill"
               value="scrum_master"
               class="py-3 border-b outline-none border-black placeholder:text-gray-300 placeholder:text-sm"
@@ -193,6 +207,7 @@
             <input
               type="radio"
               id="other"
+              v-model="technicalSkill"
               name="technical_skill"
               value="other"
               class="py-3 border-b outline-none border-black placeholder:text-gray-300 placeholder:text-sm"
@@ -215,7 +230,8 @@
             <input
               type="radio"
               id="yes"
-              name="technical_skill"
+              v-model="basicKnowledge"
+              name="basic_knowledge"
               value="yes"
               class="py-3 border-b outline-none border-black placeholder:text-gray-300 placeholder:text-sm"
             />
@@ -225,8 +241,9 @@
             <input
               type="radio"
               id="no"
-              name="technical_skill"
+              name="basic_knowledge"
               value="no"
+              v-model="basicKnowledge"
               class="py-3 border-b outline-none border-black placeholder:text-gray-300 placeholder:text-sm"
             />
             <label for="no" class="cursor-pointer text-sm">No</label>
@@ -235,7 +252,8 @@
             <input
               type="radio"
               id="still_learning"
-              name="technical_skill"
+              v-model="basicKnowledge"
+              name="basic_knowledge"
               value="still_learning"
               class="py-3 border-b outline-none border-black placeholder:text-gray-300 placeholder:text-sm"
             />
@@ -249,10 +267,25 @@
   </div>
 </template>
 
-<script>
-export default {
-  data: () => ({}),
-}
+<script setup>
+import { computed } from "vue"
+
+const state = computed({
+  get: () => store.getters.getState,
+  set: (val) => store.commit("setState", val),
+})
+const educationLevel = computed({
+  get: () => store.getters.getEducationLevel,
+  set: (val) => store.commit("setEducationLevel", val),
+})
+const technicalSkill = computed({
+  get: () => store.getters.getInterestedTechnicalSkill,
+  set: (val) => store.commit("setInterestedTechnicalSkill", val),
+})
+const basicKnowledge = computed({
+  get: () => store.getters.getBasicKnowledgeInSkill,
+  set: (val) => store.commit("setBasicKnowledgeInSkill", val),
+})
 </script>
 
 <style></style>

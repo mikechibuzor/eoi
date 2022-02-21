@@ -51,7 +51,7 @@
         >
         <input
           type="text"
-          v-model="full_name"
+          v-model="fullName"
           class="w-full py-3 border-b outline-none border-black placeholder:text-gray-300 placeholder:text-sm"
           placeholder="Full Name"
         />
@@ -106,7 +106,7 @@
         >
         <input
           type="number"
-          v-model="phone_number"
+          v-model="phoneNumber"
           class="w-full py-3 border-b outline-none border-black placeholder:text-gray-300 placeholder:text-sm"
           placeholder="08094939264"
         />
@@ -116,12 +116,37 @@
 </template>
 
 <script setup>
-// import { ref } from "vue"
+import { computed, onMounted } from "vue"
+import { useStore } from "vuex"
 
-// // reactive variables
-// const email = ref("")
-// const gender = ref("")
-// const full_name = ref("")
+// access store
+const store = useStore()
+
+// computed properties
+const email = computed({
+  get: () => store.getters.getEmail,
+  set: (val) => store.commit("setEmail", val),
+})
+
+const fullName = computed({
+  get: () => store.getters.getFullName,
+  set: (val) => store.commit("setFullName", val),
+})
+
+const gender = computed({
+  get: () => store.getters.getGender,
+  set: (val) => store.commit("setGender", val),
+})
+
+const phoneNumber = computed({
+  get: () => store.getters.getPhoneNumber,
+  set: (val) => store.commit("setPhoneNumber", val),
+})
+
+// lifecycle hook
+// onMounted(() => {
+//   console.log(store.getters)
+// })
 </script>
 
 <style></style>
