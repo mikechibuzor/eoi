@@ -4,7 +4,7 @@ import state from "./state.js"
 import { getters } from "./getters.js"
 import { mutations } from "./mutations.js"
 
-const STATE_NAME = "formState"
+const STATE_NAME = "formDetails"
 
 const getState = () => {
   if (localStorage.getItem(STATE_NAME)) {
@@ -13,7 +13,7 @@ const getState = () => {
   return state
 }
 
-watch(state, () => localStorage.setItem(STATE_NAME), JSON.stringify(state))
+watch(state, () => localStorage.setItem(STATE_NAME, JSON.stringify(state)))
 
 const store = createStore({
   state: getState(),

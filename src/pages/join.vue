@@ -54,7 +54,7 @@
 </template>
 
 <script>
-import { ref, computed } from "vue"
+import { ref, computed, inject } from "vue"
 import FormOne from "../components/form-one-two-three/FormOne.vue"
 import FormTwo from "../components/form-one-two-three/FormTwo.vue"
 import FormThree from "../components/form-one-two-three/FormThree.vue"
@@ -70,6 +70,8 @@ export default {
   setup() {
     // access store
     const store = useStore()
+    // use toast
+    const toast = inject("toast")
     // constant variable
     const progressIndex = ref(1)
     const activeFormValue = ref("FormOne")
@@ -124,9 +126,17 @@ export default {
       const validator = pickValidator()
       if (progressIndex.value < 3 && validator) {
         progressIndex.value++
+        localStorage.setItem("formDetails", JSON.stringify(store.state))
+        toast.success("Form saved")
         changeCurrentForm()
+      } else {
+        toast.error("Please fill all fields")
       }
       // on submitting the form
+      if (progressIndex.value === 3 && validator) {
+        // const data = {},
+        //  postForm(data)
+      }
     }
     return {
       previousHandler,
@@ -136,6 +146,8 @@ export default {
       store,
       pickValidator,
       toggleNextSubmitText,
+      postForm,
+      toast,
     }
   },
 }
