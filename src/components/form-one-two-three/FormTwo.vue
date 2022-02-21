@@ -79,9 +79,7 @@
               value="bsc"
               class="py-3 border-b outline-none border-black placeholder:text-gray-300 placeholder:text-sm"
             />
-            <label for="undergraduate" class="cursor-pointer text-sm"
-              >BSC</label
-            >
+            <label for="bsc" class="cursor-pointer text-sm">BSC</label>
           </div>
         </div>
       </div>
@@ -269,14 +267,14 @@
 
 <script setup>
 import { computed } from "vue"
-import { useStore } from 'vuex'
+import { useStore } from "vuex"
 
 // access store
 const store = useStore()
 
 const state = computed({
   get: () => store.getters.getState,
-  set: (val) => store.commit("setState", val),
+  set: (val) => store.commit("setStateOfResidence", val),
 })
 const educationLevel = computed({
   get: () => store.getters.getEducationLevel,

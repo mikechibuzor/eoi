@@ -14,9 +14,24 @@ export const getters = {
   getWhyJoinNetwork: (state) => state.whyJoinNetwork,
   getUnderstandNotPaidJob: (state) => state.understandNotPaidJob,
   validateFormOne: (state) => {
-    return state.email && state.fullname && state.gender && state.phoneNumber
+    return state.email && state.fullName && state.gender && state.phoneNumber
   },
-  //   validateFormTwo: (state) =>{
-
-  //   }
+  validateFormTwo: (state) => {
+    return (
+      state.stateOfResidence &&
+      state.educationLevel &&
+      state.interestedTechnicalSkill &&
+      state.basicKnowledgeInSkill
+    )
+  },
+  validateFormThree: (state) => {
+    return (
+      state.mostChallengingInField &&
+      state.detailsOnImpressedProject &&
+      state.techJourney &&
+      state.githubUrl &&
+      state.whyJoinNetwork &&
+      state.understandNotPaidJob
+    )
+  },
 }

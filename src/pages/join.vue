@@ -58,6 +58,7 @@ import { ref, computed } from "vue"
 import FormOne from "../components/form-one-two-three/FormOne.vue"
 import FormTwo from "../components/form-one-two-three/FormTwo.vue"
 import FormThree from "../components/form-one-two-three/FormThree.vue"
+import { useStore } from "vuex"
 
 export default {
   components: {
@@ -66,6 +67,8 @@ export default {
     FormThree,
   },
   setup() {
+    // access store
+    const store = useStore()
     // constant variable
     const progressIndex = ref(1)
     const activeFormValue = ref("FormOne")
@@ -88,6 +91,17 @@ export default {
       }
     }
 
+    // pick form validation from store
+    const pickValidator = () => {
+      if (progressIndex.value === 1) {
+        return store.getters.validateFormOne
+      } else if (progressIndex.value === 2) {
+        return store.getters.validateFormTwo
+      } else if (progressIndex.value === 3) {
+        return store.getters.validateFormThree
+      }
+    }
+
     const previousHandler = () => {
       if (progressIndex.value === 1) {
         return
@@ -97,7 +111,8 @@ export default {
       }
     }
     const nextHandler = () => {
-      if (progressIndex.value < 3) {
+      const validator = pickValidator()
+      if (progressIndex.value < 3 && validator) {
         progressIndex.value++
         changeCurrentForm()
       }
@@ -107,6 +122,8 @@ export default {
       nextHandler,
       activeForm,
       progressIndex,
+      store,
+      pickValidator,
     }
   },
 }

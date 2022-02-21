@@ -142,11 +142,6 @@ const phoneNumber = computed({
   get: () => store.getters.getPhoneNumber,
   set: (val) => store.commit("setPhoneNumber", val),
 })
-
-// lifecycle hook
-// onMounted(() => {
-//   console.log(store.getters)
-// })
 </script>
 
 <style></style>

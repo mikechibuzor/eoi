@@ -4,11 +4,11 @@ export const mutations = {
   setGender: (state, payload) => (state.gender = payload),
   setPhoneNumber: (state, payload) => (state.phoneNumber = payload),
   setStateOfResidence: (state, payload) => (state.stateOfResidence = payload),
-  setEducationLevel: (state, payload) => state.educationLevel - payload,
+  setEducationLevel: (state, payload) => (state.educationLevel = payload),
   setInterestedTechnicalSkill: (state, payload) =>
     (state.interestedTechnicalSkill = payload),
   setBasicKnowledgeInSkill: (state, payload) =>
-    (state.basicKnoledgeInSkill = payload),
+    (state.basicKnowledgeInSkill = payload),
   setMostChallengingInFeld: (state, payload) =>
     (state.mostChallengingInField = payload),
   setDetailsOnImpressedProject: (state, payload) =>
