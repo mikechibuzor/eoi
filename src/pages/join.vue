@@ -44,7 +44,7 @@
               class="bg-primary-color text-white font-medium shadow-sm rounded px-8 py-2.5 custom-breakpoint:py-3"
               @click="nextHandler"
             >
-              Next
+              {{ toggleNextSubmitText }}
             </button>
           </div>
         </div>
@@ -59,6 +59,7 @@ import FormOne from "../components/form-one-two-three/FormOne.vue"
 import FormTwo from "../components/form-one-two-three/FormTwo.vue"
 import FormThree from "../components/form-one-two-three/FormThree.vue"
 import { useStore } from "vuex"
+import { postForm } from "../services/form.js"
 
 export default {
   components: {
@@ -75,6 +76,14 @@ export default {
     // computed properties
     const activeForm = computed(() => {
       return activeFormValue.value
+    })
+
+    const toggleNextSubmitText = computed(() => {
+      if (progressIndex.value === 3) {
+        return "Submit"
+      } else {
+        return "Next"
+      }
     })
 
     // methods
@@ -111,11 +120,13 @@ export default {
       }
     }
     const nextHandler = () => {
+      // on moving to the next form
       const validator = pickValidator()
       if (progressIndex.value < 3 && validator) {
         progressIndex.value++
         changeCurrentForm()
       }
+      // on submitting the form
     }
     return {
       previousHandler,
@@ -124,6 +135,7 @@ export default {
       progressIndex,
       store,
       pickValidator,
+      toggleNextSubmitText,
     }
   },
 }
