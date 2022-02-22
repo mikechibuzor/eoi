@@ -104,6 +104,7 @@
               type="radio"
               id="no"
               name="technical_skill"
+              v-model="notPaidJob"
               value="no"
               class="py-3 border-b outline-none border-black placeholder:text-gray-300 placeholder:text-sm"
             />
@@ -123,7 +124,7 @@ const store = useStore()
 
 const fieldChallenge = computed({
   get: () => store.getters.getMostChallengingInField,
-  set: (val) => store.commit("setMostChallengingInField", val),
+  set: (val) => store.commit("setMostChallengingInFeld", val),
 })
 const projectDetails = computed({
   get: () => store.getters.getDetailsOnImpressedProject,
@@ -138,7 +139,7 @@ const githubLink = computed({
   set: (val) => store.commit("setGithubUrl", val),
 })
 const joinReason = computed({
-  get: () => store.getters.WhyJoinNetwork,
+  get: () => store.getters.getWhyJoinNetwork,
   set: (val) => store.commit("setWhyJoinNetwork", val),
 })
 const notPaidJob = computed({

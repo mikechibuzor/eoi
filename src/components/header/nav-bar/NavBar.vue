@@ -22,10 +22,12 @@
         <li class="font-medium text-white">
           <router-link to="/contact">Contact</router-link>
         </li>
-        <li
-          
-        >
-          <router-link class="font-medium text-white border border-white px-8 hover:bg-white hover:text-black cursor-pointer py-2" to="/join">Join</router-link>
+        <li>
+          <router-link
+            class="font-medium text-white border border-white px-8 hover:bg-white hover:text-black cursor-pointer py-2"
+            to="/join"
+            >Join</router-link
+          >
         </li>
       </ul>
       <!-- for mobile -->
@@ -128,6 +130,11 @@ nav a::before {
   }
   nav a.router-link-active::before {
     background: white;
+  }
+}
+@media screen and (min-width: 768px) {
+  .resp {
+    width: 25%;
   }
 }
 

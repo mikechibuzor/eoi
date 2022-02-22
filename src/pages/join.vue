@@ -121,7 +121,7 @@ export default {
         changeCurrentForm()
       }
     }
-    const nextHandler = () => {
+    const nextHandler = async () => {
       // on moving to the next form
       const validator = pickValidator()
       if (progressIndex.value < 3 && validator) {
@@ -129,13 +129,35 @@ export default {
         localStorage.setItem("formDetails", JSON.stringify(store.state))
         toast.success("Form saved")
         changeCurrentForm()
-      } else {
+      } else if (!validator) {
         toast.error("Please fill all fields")
       }
       // on submitting the form
       if (progressIndex.value === 3 && validator) {
-        // const data = {},
-        //  postForm(data)
+        localStorage.setItem("formDetails", JSON.stringify(store.state))
+        console.log(store.state)
+        const data = {
+          email: store.state.email,
+          full_name: store.state.fullName,
+          gender: store.state.gender,
+          phone_number: store.state.phoneNumber,
+          education_level: store.state.educationLevel,
+          technical_interest: store.state.interestedTechnicalSkill,
+          greatest_challenge: store.state.mostChallengingInField,
+          career_journey: store.state.techJourney,
+          github_url: store.state.githubUrl,
+          why_join: store.state.whyJoinNetwork,
+          uderstand_project: store.state.understandNotPaidJob,
+          basic_knowledge: store.state.basicKnowledgeInSkill,
+        }
+        try {
+          const response = await postForm(data)
+          toast.success(
+            "Your response has been submitted successfully! \n We will reach out to you soon enough"
+          )
+        } catch (err) {
+          toast.error("Something went wrong. Please try again")
+        }
       }
     }
     return {
@@ -146,7 +168,6 @@ export default {
       store,
       pickValidator,
       toggleNextSubmitText,
-      postForm,
       toast,
     }
   },

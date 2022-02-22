@@ -273,7 +273,7 @@ import { useStore } from "vuex"
 const store = useStore()
 
 const state = computed({
-  get: () => store.getters.getState,
+  get: () => store.getters.getStateOfResidence,
   set: (val) => store.commit("setStateOfResidence", val),
 })
 const educationLevel = computed({
