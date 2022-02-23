@@ -20,6 +20,10 @@ const router = createRouter({
       path: "/join",
       component: () => import("../pages/join.vue"),
     },
+    {
+      path: "/admin",
+      component: () => import("../pages/admin.vue"),
+    },
   ],
 })
 
