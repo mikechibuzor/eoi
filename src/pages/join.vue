@@ -159,8 +159,9 @@ export default {
 
         await postForm(data)
           .then((res) => {
+            console.log(res)
             const { data, status } = res
-
+            console.log(status, data)
             if (data && status === 201) {
               toast.success(
                 "Your response has been submitted successfully! \n We will reach out to you soon enough"
@@ -177,12 +178,10 @@ export default {
               // re-direct to home page
               router.push("/")
             }
-
-            if (status === 422) {
-              toast.error(data[0]["msg"])
-            }
           })
-          .catch(() => toast.error("something went wrong"))
+          .catch((err) => {
+            toast.error(err.response.data.errors[0].msg)
+          })
       }
     }
     return {
