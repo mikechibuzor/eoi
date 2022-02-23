@@ -169,8 +169,17 @@ export default {
               // reset state
               store.commit("resetState")
 
+              // set back progress index to 1
+              progressIndex.value = 1
+              // reset active form value
+              activeFormValue.value = "FormOne"
+
               // re-direct to home page
               router.push("/")
+            }
+
+            if (status === 422) {
+              toast.error(data[0]["msg"])
             }
           })
           .catch(() => toast.error("something went wrong"))

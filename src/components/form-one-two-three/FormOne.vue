@@ -38,6 +38,7 @@
         >
         <input
           type="email"
+          autocomplete="on"
           v-model="email"
           class="w-full py-3 border-b outline-none border-black placeholder:text-gray-300 placeholder:text-sm"
           placeholder="Enter Email"
@@ -52,6 +53,7 @@
         <input
           type="text"
           v-model="fullName"
+          autocomplete="on"
           class="w-full py-3 border-b outline-none border-black placeholder:text-gray-300 placeholder:text-sm"
           placeholder="Full Name"
         />
@@ -106,6 +108,7 @@
         >
         <input
           type="tel"
+          autocomplete="on"
           v-model="phoneNumber"
           class="w-full py-3 border-b outline-none border-black placeholder:text-gray-300 placeholder:text-sm"
           placeholder="08094939264"

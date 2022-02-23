@@ -10,6 +10,7 @@
         <input
           type="text"
           v-model="state"
+          autocomplete="on"
           class="w-full py-3 border-b outline-none border-black placeholder:text-gray-300 placeholder:text-sm"
           placeholder="e.g Lagos"
         />
