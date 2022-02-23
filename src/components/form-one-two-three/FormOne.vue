@@ -67,7 +67,7 @@
               id="male"
               v-model="gender"
               name="gender"
-              value="male"
+              value="Male"
               class="py-3 border-b outline-none border-black placeholder:text-gray-300 placeholder:text-sm"
               placeholder="Full Name"
             />
@@ -79,7 +79,7 @@
               id="female"
               v-model="gender"
               name="gender"
-              value="female"
+              value="Female"
               class="py-3 border-b outline-none border-black placeholder:text-gray-300 placeholder:text-sm"
               placeholder="Full Name"
             />
@@ -87,7 +87,7 @@
           </div>
         </div>
       </div>
-      <div class="form-element flex items-center gap-3 px-8 mb-14">
+      <!-- <div class="form-element flex items-center gap-3 px-8 mb-14">
         <label for="email">Specify</label>
         <input
           type="text"
@@ -97,7 +97,7 @@
           class="border-b w-full outline-none border-black placeholder:text-gray-300 placeholder:text-sm"
           placeholder=""
         />
-      </div>
+      </div> -->
       <div class="form-element mb-6 px-8">
         <label for="email" class="font-bold"
           >Phone Number<span class="text-red-700 text-2xl font-bold"
@@ -105,7 +105,7 @@
           ></label
         >
         <input
-          type="number"
+          type="tel"
           v-model="phoneNumber"
           class="w-full py-3 border-b outline-none border-black placeholder:text-gray-300 placeholder:text-sm"
           placeholder="08094939264"

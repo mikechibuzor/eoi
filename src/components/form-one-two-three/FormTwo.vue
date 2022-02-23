@@ -29,7 +29,7 @@
               id="ssce"
               v-model="educationLevel"
               name="education_level"
-              value="ssce"
+              value="SSCE"
               class="py-3 border-b outline-none border-black placeholder:text-gray-300 placeholder:text-sm"
               placeholder="Full Name"
             />
@@ -41,7 +41,7 @@
               id="ond"
               v-model="educationLevel"
               name="education_level"
-              value="ond"
+              value="OND"
               class="py-3 border-b outline-none border-black placeholder:text-gray-300 placeholder:text-sm"
             />
             <label for="ond" class="cursor-pointer text-sm">OND</label>
@@ -52,7 +52,7 @@
               id="hnd"
               v-model="educationLevel"
               name="education_level"
-              value="hnd"
+              value="HND"
               class="py-3 border-b outline-none border-black placeholder:text-gray-300 placeholder:text-sm"
             />
             <label for="hnd" class="cursor-pointer text-sm">HND</label>
@@ -63,7 +63,7 @@
               id="undergraduate"
               v-model="educationLevel"
               name="education_level"
-              value="undergraduate"
+              value="UNDERGRADUATE"
               class="py-3 border-b outline-none border-black placeholder:text-gray-300 placeholder:text-sm"
             />
             <label for="undergraduate" class="cursor-pointer text-sm"
@@ -76,7 +76,7 @@
               id="bsc"
               v-model="educationLevel"
               name="education_level"
-              value="bsc"
+              value="BSC"
               class="py-3 border-b outline-none border-black placeholder:text-gray-300 placeholder:text-sm"
             />
             <label for="bsc" class="cursor-pointer text-sm">BSC</label>
@@ -230,7 +230,7 @@
               id="yes"
               v-model="basicKnowledge"
               name="basic_knowledge"
-              value="yes"
+              value="Yes"
               class="py-3 border-b outline-none border-black placeholder:text-gray-300 placeholder:text-sm"
             />
             <label for="yes" class="cursor-pointer text-sm">Yes</label>
@@ -240,7 +240,7 @@
               type="radio"
               id="no"
               name="basic_knowledge"
-              value="no"
+              value="No"
               v-model="basicKnowledge"
               class="py-3 border-b outline-none border-black placeholder:text-gray-300 placeholder:text-sm"
             />
@@ -252,7 +252,7 @@
               id="still_learning"
               v-model="basicKnowledge"
               name="basic_knowledge"
-              value="still_learning"
+              value="Still Learning"
               class="py-3 border-b outline-none border-black placeholder:text-gray-300 placeholder:text-sm"
             />
             <label for="still_learning" class="cursor-pointer text-sm"

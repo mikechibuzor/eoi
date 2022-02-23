@@ -59,6 +59,7 @@ import FormOne from "../components/form-one-two-three/FormOne.vue"
 import FormTwo from "../components/form-one-two-three/FormTwo.vue"
 import FormThree from "../components/form-one-two-three/FormThree.vue"
 import { useStore } from "vuex"
+import { useRouter } from "vue-router"
 import { postForm } from "../services/form.js"
 
 export default {
@@ -70,11 +71,14 @@ export default {
   setup() {
     // access store
     const store = useStore()
+    // use router
+    const router = useRouter()
     // use toast
     const toast = inject("toast")
     // constant variable
     const progressIndex = ref(1)
     const activeFormValue = ref("FormOne")
+    const submitConditionHelper = ref(0)
     // computed properties
     const activeForm = computed(() => {
       return activeFormValue.value
@@ -133,9 +137,8 @@ export default {
         toast.error("Please fill all fields")
       }
       // on submitting the form
-      if (progressIndex.value === 3 && validator) {
+      if (store.getters.validateFormThree) {
         localStorage.setItem("formDetails", JSON.stringify(store.state))
-        console.log(store.state)
         const data = {
           email: store.state.email,
           full_name: store.state.fullName,
@@ -155,6 +158,10 @@ export default {
           toast.success(
             "Your response has been submitted successfully! \n We will reach out to you soon enough"
           )
+          // reset state
+          store.commit("resetState")
+          // re-direct to home page
+          router.push("/")
         } catch (err) {
           toast.error("Something went wrong. Please try again")
         }
