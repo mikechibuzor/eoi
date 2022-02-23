@@ -75,10 +75,12 @@ export default {
     const router = useRouter()
     // use toast
     const toast = inject("toast")
-    // constant variable
+
+    // reactive variable
     const progressIndex = ref(1)
     const activeFormValue = ref("FormOne")
     const submitConditionHelper = ref(0)
+
     // computed properties
     const activeForm = computed(() => {
       return activeFormValue.value
@@ -125,6 +127,7 @@ export default {
         changeCurrentForm()
       }
     }
+
     const nextHandler = async () => {
       // on moving to the next form
       const validator = pickValidator()
@@ -153,18 +156,24 @@ export default {
           uderstand_project: store.state.understandNotPaidJob,
           basic_knowledge: store.state.basicKnowledgeInSkill,
         }
-        try {
-          const response = await postForm(data)
-          toast.success(
-            "Your response has been submitted successfully! \n We will reach out to you soon enough"
-          )
-          // reset state
-          store.commit("resetState")
-          // re-direct to home page
-          router.push("/")
-        } catch (err) {
-          toast.error("Something went wrong. Please try again")
-        }
+
+        await postForm(data)
+          .then((res) => {
+            const { data, status } = res
+
+            if (data && status === 201) {
+              toast.success(
+                "Your response has been submitted successfully! \n We will reach out to you soon enough"
+              )
+              store.commit("resetState")
+
+              // re-direct to home page
+              router.push("/")
+            }
+          })
+          .catch(() => toast.error("something went wrong"))
+
+        // reset state
       }
     }
     return {

@@ -19,7 +19,7 @@ export const mutations = {
   setUnderstandNotPaidJob: (state, payload) =>
     (state.understandNotPaidJob = payload),
   resetState: (state) => {
-    Window.localStorage.removeItem("formDetails")
+    localStorage.removeItem("formDetails")
     state = {
       email: null,
       fullName: null,
