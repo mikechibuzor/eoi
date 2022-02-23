@@ -165,6 +165,8 @@ export default {
               toast.success(
                 "Your response has been submitted successfully! \n We will reach out to you soon enough"
               )
+
+              // reset state
               store.commit("resetState")
 
               // re-direct to home page
@@ -172,8 +174,6 @@ export default {
             }
           })
           .catch(() => toast.error("something went wrong"))
-
-        // reset state
       }
     }
     return {
